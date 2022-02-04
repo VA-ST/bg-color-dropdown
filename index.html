@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar Fondo con Dropdown Menu</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comforter&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section>
+        <div class="bg">Rojo</div>
+        <select class="selectColor" onchange="changeColor(this)">
+            <option value="#FF2323">Rojo</option>
+            <option value="#66FF00">Verde</option>
+            <option value="#9B1FE8">Morado</option>
+            <option value="#575757">Gris</option>
+            <option value="#FF69B4">Rosa</option>
+        </select>
+    </section>
+    <script>
+        function changeColor(getColor){
+            let bg = document.querySelector('.bg');
+            let selectColor = getColor.value;
+            let text = getColor.options[getColor.selectedIndex].text;
+            bg.style.background = selectColor;
+            bg.innerHTML = text;
+        }
+    </script>
+</body>
+</html>
